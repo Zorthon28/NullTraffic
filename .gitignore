@@ -1,0 +1,7 @@
+.streamlit/
+__pycache__/
+*.pyc
+debug.log
+traffic_data.csv
+logging_enabled.txt
+manual_log.txt

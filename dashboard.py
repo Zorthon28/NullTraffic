@@ -288,26 +288,26 @@ while True:
 
         df = load_data()
 
+        # Apply filters even if df is empty for consistency
+        filtered_df = df.copy() if not df.empty else pd.DataFrame()
+        if not df.empty and date_range:
+            if len(date_range) == 2:
+                start_date, end_date = date_range
+                filtered_df = filtered_df[(filtered_df['timestamp'].dt.date >= start_date) & (
+                    filtered_df['timestamp'].dt.date <= end_date)]
+        if not df.empty and weekday_filter:
+            filtered_df = filtered_df[filtered_df['weekday'].isin(
+                weekday_filter)]
+        if not df.empty and destination_filter != "All":
+            filtered_df = filtered_df[filtered_df['destination']
+                                      == destination_filter]
+        if not df.empty and 'route' in df.columns and route_filter:
+            filtered_df = filtered_df[filtered_df['route'].isin(
+                route_filter)]
+
         if df.empty:
             st.write("No data available yet.")
         else:
-            # Apply filters
-            filtered_df = df.copy()
-            if date_range:
-                if len(date_range) == 2:
-                    start_date, end_date = date_range
-                    filtered_df = filtered_df[(filtered_df['timestamp'].dt.date >= start_date) & (
-                        filtered_df['timestamp'].dt.date <= end_date)]
-            if weekday_filter:
-                filtered_df = filtered_df[filtered_df['weekday'].isin(
-                    weekday_filter)]
-            if destination_filter != "All":
-                filtered_df = filtered_df[filtered_df['destination']
-                                          == destination_filter]
-            if 'route' in df.columns and route_filter:
-                filtered_df = filtered_df[filtered_df['route'].isin(
-                    route_filter)]
-
             # Data summary card
             col1, col2, col3 = st.columns(3)
             with col1:
@@ -342,16 +342,50 @@ while True:
                 else:
                     st.write("No data matches filters.")
             with col5:
-                if not filtered_df.empty and not filtered_df.groupby('hour')['duration_sec'].mean().empty:
-                    hour_avg = filtered_df.groupby(
-                        'hour')['duration_sec'].mean()
-                    min_hour = hour_avg.idxmin()
-                    min_dur = hour_avg.min()
-                    st.subheader("Optimal Departure Window")
-                    st.write(f"Best time: {min_hour}:00")
-                    st.metric("Average Duration", f"{min_dur/60:.1f} min")
+                st.subheader("Optimal Departure Windows")
 
-                    # Alert for high traffic
+                # Best for outbound (A/B) in morning 4AM-9AM
+                outbound_df = filtered_df[filtered_df['destination'].isin(
+                    ['A', 'B'])] if not filtered_df.empty else pd.DataFrame()
+                if not outbound_df.empty:
+                    morning_df = outbound_df[(outbound_df['hour'] >= 4) & (
+                        outbound_df['hour'] <= 9)]
+                    if not morning_df.empty and not morning_df.groupby('hour')['duration_sec'].mean().empty:
+                        morning_avg = morning_df.groupby(
+                            'hour')['duration_sec'].mean()
+                        best_morning = morning_avg.idxmin()
+                        best_dur = morning_avg.min()
+                        st.write(
+                            f"**Outbound (A/B) Morning:** {best_morning}:00 ({best_dur/60:.1f} min)")
+                    else:
+                        st.write(
+                            "**Outbound (A/B) Morning:** Insufficient data in 4AM-9AM range")
+                else:
+                    st.write(
+                        "**Outbound (A/B) Morning:** No outbound data available")
+
+                # Best for return (C/D) in evening 4PM-8PM
+                return_df = filtered_df[filtered_df['destination'].isin(
+                    ['C', 'D'])] if not filtered_df.empty else pd.DataFrame()
+                if not return_df.empty:
+                    evening_df = return_df[(return_df['hour'] >= 16) & (
+                        return_df['hour'] <= 20)]
+                    if not evening_df.empty and not evening_df.groupby('hour')['duration_sec'].mean().empty:
+                        evening_avg = evening_df.groupby(
+                            'hour')['duration_sec'].mean()
+                        best_evening = evening_avg.idxmin()
+                        best_dur = evening_avg.min()
+                        st.write(
+                            f"**Return (C/D) Evening:** {best_evening}:00 ({best_dur/60:.1f} min)")
+                    else:
+                        st.write(
+                            "**Return (C/D) Evening:** Insufficient data in 4PM-8PM range")
+                else:
+                    st.write("**Return (C/D) Evening:** No return data available")
+
+                # Alert for high traffic
+                if not filtered_df.empty:
+                    desc = filtered_df['duration_sec'].describe()
                     latest_dur = filtered_df['duration_sec'].iloc[-1]
                     if latest_dur > desc['mean'] + desc['std']:
                         st.warning(
@@ -359,9 +393,6 @@ while True:
                     elif latest_dur > desc['75%']:
                         st.info(
                             f"⚠️ Elevated traffic. Latest: {latest_dur} sec")
-                else:
-                    st.subheader("Optimal Departure Window")
-                    st.write("Insufficient data.")
 
             # Visualizations
             st.subheader("Visualizations")

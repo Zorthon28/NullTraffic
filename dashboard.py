@@ -29,6 +29,12 @@ else:
 
 refresh_interval = max(10, current_config.get("interval_minutes", 10) * 30)
 
+# Check for API key
+api_key = st.secrets.get("api_key", config.get("api_key"))
+if not api_key or api_key == "PUT_YOUR_API_KEY_HERE":
+    st.error("🚨 API Key Missing! Please set your Google Maps API key in Streamlit secrets or replace 'PUT_YOUR_API_KEY_HERE' in config.json.")
+    st.stop()
+
 st.title(
     f"Traffic Data Dashboard: {config['origin']} → A: {config['destination_a']} | B: {config['destination_b']}")
 

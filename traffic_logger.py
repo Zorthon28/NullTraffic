@@ -11,7 +11,6 @@ DEFAULT_CONFIG = {
     "origin": "Tijuana,MX",
     "destination_a": "San Diego,CA",
     "destination_b": "Los Angeles,CA",
-    "api_key": "AIzaSyCJw-zwCWsIstOHESHKJrjPs6sgfBi1IkA",
     "interval_minutes": 5,
     "csv_file": "traffic_data.csv"
 }

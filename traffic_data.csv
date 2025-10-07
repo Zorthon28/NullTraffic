@@ -23,3 +23,45 @@ timestamp,weekday,time,duration_sec,duration_text,destination,route,summary
 2025-10-07T12:27:57.552071,Tuesday,12:27,2506,42 mins,B,0,Lib. Sur
 2025-10-07T12:27:57.552071,Tuesday,12:27,2783,46 mins,B,1,Carr. Transpeninsular/México 1
 2025-10-07T12:27:57.552071,Tuesday,12:27,2943,49 mins,B,2,Carr. Transpeninsular/México 1 and Av. Vía Rápida Pte./México 2
+2025-10-07T12:30:52.336140,Tuesday,12:30,2209,37 mins,A,0,Carr. Transpeninsular/México 1
+2025-10-07T12:30:52.336140,Tuesday,12:30,2391,40 mins,A,1,Blvd. Fundadores
+2025-10-07T12:30:52.336140,Tuesday,12:30,2611,44 mins,A,2,Lib. Sur
+2025-10-07T12:30:52.336140,Tuesday,12:30,2482,41 mins,B,0,Lib. Sur
+2025-10-07T12:30:52.336140,Tuesday,12:30,2744,46 mins,B,1,Carr. Transpeninsular/México 1
+2025-10-07T12:30:52.336140,Tuesday,12:30,2939,49 mins,B,2,Carr. Transpeninsular/México 1 and Av. Vía Rápida Pte./México 2
+2025-10-07T12:32:59.175693,Tuesday,12:32,2319,39 mins,A,0,Carr. Transpeninsular/México 1
+2025-10-07T12:32:59.175693,Tuesday,12:32,2445,41 mins,A,1,Blvd. Fundadores
+2025-10-07T12:32:59.175693,Tuesday,12:32,2686,45 mins,A,2,Lib. Sur
+2025-10-07T12:32:59.175693,Tuesday,12:32,2523,42 mins,B,0,Lib. Sur
+2025-10-07T12:32:59.175693,Tuesday,12:32,2794,47 mins,B,1,Carr. Transpeninsular/México 1
+2025-10-07T12:32:59.175693,Tuesday,12:32,3025,50 mins,B,2,Carr. Transpeninsular/México 1 and Av. Vía Rápida Pte./México 2
+2025-10-07T12:35:17.983451,Tuesday,12:35,2229,37 mins,A,0,Carr. Transpeninsular/México 1
+2025-10-07T12:35:17.983451,Tuesday,12:35,2384,40 mins,A,1,Blvd. Fundadores
+2025-10-07T12:35:17.983451,Tuesday,12:35,2578,43 mins,A,2,Lib. Sur
+2025-10-07T12:35:17.983451,Tuesday,12:35,2463,41 mins,B,0,Lib. Sur
+2025-10-07T12:35:17.983451,Tuesday,12:35,2760,46 mins,B,1,Carr. Transpeninsular/México 1
+2025-10-07T12:35:17.983451,Tuesday,12:35,2950,49 mins,B,2,Carr. Transpeninsular/México 1 and Av. Vía Rápida Pte./México 2
+2025-10-07T12:35:45.931261,Tuesday,12:35,2204,37 mins,A,0,Carr. Transpeninsular/México 1
+2025-10-07T12:35:45.931261,Tuesday,12:35,2364,39 mins,A,1,Blvd. Fundadores
+2025-10-07T12:35:45.931261,Tuesday,12:35,2517,42 mins,A,2,Lib. Sur
+2025-10-07T12:35:45.931261,Tuesday,12:35,2448,41 mins,B,0,Lib. Sur
+2025-10-07T12:35:45.931261,Tuesday,12:35,2443,41 mins,B,1,Blvd. el Rosario and Lib. Sur
+2025-10-07T12:35:45.931261,Tuesday,12:35,2708,45 mins,B,2,Carr. Transpeninsular/México 1
+2025-10-07T12:35:48.452867,Tuesday,12:35,2204,37 mins,A,0,Carr. Transpeninsular/México 1
+2025-10-07T12:35:48.452867,Tuesday,12:35,2364,39 mins,A,1,Blvd. Fundadores
+2025-10-07T12:35:48.452867,Tuesday,12:35,2517,42 mins,A,2,Lib. Sur
+2025-10-07T12:35:48.452867,Tuesday,12:35,2450,41 mins,B,0,Lib. Sur
+2025-10-07T12:35:48.452867,Tuesday,12:35,2449,41 mins,B,1,Blvd. el Rosario and Lib. Sur
+2025-10-07T12:35:48.452867,Tuesday,12:35,2719,45 mins,B,2,Carr. Transpeninsular/México 1
+2025-10-07T12:35:57.338636,Tuesday,12:35,2207,37 mins,A,0,Carr. Transpeninsular/México 1
+2025-10-07T12:35:57.338636,Tuesday,12:35,2370,40 mins,A,1,Blvd. Fundadores
+2025-10-07T12:35:57.338636,Tuesday,12:35,2515,42 mins,A,2,Lib. Sur
+2025-10-07T12:35:57.338636,Tuesday,12:35,2452,41 mins,B,0,Lib. Sur
+2025-10-07T12:35:57.338636,Tuesday,12:35,2449,41 mins,B,1,Blvd. el Rosario and Lib. Sur
+2025-10-07T12:35:57.338636,Tuesday,12:35,2748,46 mins,B,2,Carr. Transpeninsular/México 1
+2025-10-07T12:38:00.489703,Tuesday,12:38,2216,37 mins,A,0,Carr. Transpeninsular/México 1
+2025-10-07T12:38:00.489703,Tuesday,12:38,2424,40 mins,A,1,Blvd. Fundadores
+2025-10-07T12:38:00.489703,Tuesday,12:38,2481,41 mins,A,2,Lib. Sur
+2025-10-07T12:38:00.489703,Tuesday,12:38,2513,42 mins,B,0,Lib. Sur
+2025-10-07T12:38:00.489703,Tuesday,12:38,2763,46 mins,B,1,Carr. Transpeninsular/México 1
+2025-10-07T12:38:00.489703,Tuesday,12:38,2956,49 mins,B,2,Carr. Transpeninsular/México 1 and Av. Vía Rápida Pte./México 2

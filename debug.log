@@ -417,3 +417,11 @@
 2025-10-07T12:19:43.572940: [2025-10-07T12:19:43.081543] Destination B Route 2 (Carr. Transpeninsular/México 1): 45 mins (2714s)
 2025-10-07T12:19:43.572940: DEBUG: Logging cycle complete.
 2025-10-07T12:19:43.573483: DEBUG: Sleeping for 300 seconds
+2025-10-07T12:27:57.552071: Performing logging at 2025-10-07T12:27:57.552071
+2025-10-07T12:27:57.859630: [2025-10-07T12:27:57.552071] Destination A Route 0 (Carr. Transpeninsular/México 1): 37 mins (2203s)
+2025-10-07T12:27:57.860630: [2025-10-07T12:27:57.552071] Destination A Route 1 (Blvd. Fundadores): 40 mins (2414s)
+2025-10-07T12:27:57.860630: [2025-10-07T12:27:57.552071] Destination A Route 2 (Lib. Sur): 44 mins (2639s)
+2025-10-07T12:27:58.197568: [2025-10-07T12:27:57.552071] Destination B Route 0 (Lib. Sur): 42 mins (2506s)
+2025-10-07T12:27:58.197568: [2025-10-07T12:27:57.552071] Destination B Route 1 (Carr. Transpeninsular/México 1): 46 mins (2783s)
+2025-10-07T12:27:58.197568: [2025-10-07T12:27:57.552071] Destination B Route 2 (Carr. Transpeninsular/México 1 and Av. Vía Rápida Pte./México 2): 49 mins (2943s)
+2025-10-07T12:27:58.198569: Logging cycle complete.

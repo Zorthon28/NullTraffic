@@ -5,6 +5,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import time
 import numpy as np
+import requests
+from datetime import datetime
 
 st.set_page_config(page_title="Traffic Dashboard", page_icon="🚗",
                    layout="wide", initial_sidebar_state="expanded")
@@ -124,11 +126,114 @@ def load_data():
         return df
 
 
+# Logging functions from traffic_logger.py
+def get_travel_time(destination, api_key):
+    url = (
+        f"https://maps.googleapis.com/maps/api/directions/json?"
+        f"origin={config['origin']}&destination={destination}"
+        f"&departure_time=now&alternatives=true&mode=driving&key={api_key}"
+    )
+    response = requests.get(url)
+    data = response.json()
+
+    routes = []
+    try:
+        for i, route in enumerate(data["routes"]):
+            duration_in_traffic = route["legs"][0]["duration_in_traffic"]["value"]
+            duration_text = route["legs"][0]["duration_in_traffic"]["text"]
+            summary = route.get("summary", f"Route {i}")
+            routes.append((duration_in_traffic, duration_text, i, summary))
+        return routes
+    except (IndexError, KeyError) as e:
+        log_debug(
+            f"Warning: Could not extract travel time for {destination}. Error: {e}")
+        return []
+
+
+def log_to_csv(timestamp, routes, destination):
+    rows = []
+    for duration_sec, duration_text, route_id, summary in routes:
+        rows.append({
+            "timestamp": timestamp,
+            "weekday": datetime.now().strftime("%A"),
+            "time": datetime.now().strftime("%H:%M"),
+            "duration_sec": duration_sec,
+            "duration_text": duration_text,
+            "destination": destination,
+            "route": route_id,
+            "summary": summary
+        })
+    df = pd.DataFrame(rows)
+    if not os.path.isfile('traffic_data.csv'):
+        df.to_csv('traffic_data.csv', index=False)
+    else:
+        df.to_csv('traffic_data.csv', mode='a', header=False, index=False)
+
+
+def log_debug(message):
+    with open("debug.log", "a") as f:
+        f.write(f"{datetime.now().isoformat()}: {message}\n")
+    print(message)
+
+
+def perform_logging():
+    api_key = config.get("api_key")
+    if not api_key:
+        log_debug("No API key found in config.")
+        return
+
+    now = datetime.now().isoformat()
+    log_debug(f"Performing logging at {now}")
+
+    # Log for Destination A
+    routes_a = get_travel_time(config["destination_a"], api_key)
+    if routes_a:
+        log_to_csv(now, routes_a, "A")
+        for dur, text, rid, summary in routes_a:
+            log_debug(
+                f"[{now}] Destination A Route {rid} ({summary}): {text} ({dur}s)")
+    else:
+        log_debug(f"[{now}] Failed to fetch data for Destination A.")
+
+    # Log for Destination B
+    routes_b = get_travel_time(config["destination_b"], api_key)
+    if routes_b:
+        log_to_csv(now, routes_b, "B")
+        for dur, text, rid, summary in routes_b:
+            log_debug(
+                f"[{now}] Destination B Route {rid} ({summary}): {text} ({dur}s)")
+    else:
+        log_debug(f"[{now}] Failed to fetch data for Destination B.")
+
+    log_debug("Logging cycle complete.")
+
+
 # Auto-refresh based on interval
 placeholder = st.empty()
 
+# Initialize session state for logging
+if 'last_log_time' not in st.session_state:
+    st.session_state.last_log_time = None
+
 while True:
     with placeholder.container():
+        # Handle logging
+        logging_enabled = os.path.isfile("logging_enabled.txt")
+        manual_log_triggered = os.path.isfile("manual_log.txt")
+        current_time = time.time()
+        interval_seconds = config.get("interval_minutes", 10) * 60
+
+        if logging_enabled:
+            if manual_log_triggered:
+                # Perform manual log
+                perform_logging()
+                os.remove("manual_log.txt")
+                st.session_state.last_log_time = current_time
+            elif st.session_state.last_log_time is None or (current_time - st.session_state.last_log_time) >= interval_seconds:
+                # Perform automatic log
+                perform_logging()
+                st.session_state.last_log_time = current_time
+
         df = load_data()
 
         if df.empty:

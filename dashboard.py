@@ -415,12 +415,15 @@ while True:
             # Debug log
             st.subheader("Debug Log")
             if os.path.isfile("debug.log"):
-                with open("debug.log", "r") as f:
-                    lines = f.readlines()
-                    last_lines = lines[-20:]  # Last 20 lines
-                    debug_text = "".join(last_lines)
-                    st.text_area("Recent Debug Messages",
-                                 debug_text, height=200)
+                try:
+                    with open("debug.log", "r", encoding='utf-8', errors='ignore') as f:
+                        lines = f.readlines()
+                        last_lines = lines[-20:]  # Last 20 lines
+                        debug_text = "".join(last_lines)
+                        st.text_area("Recent Debug Messages",
+                                     debug_text, height=200)
+                except Exception as e:
+                    st.write(f"Error reading debug log: {e}")
             else:
                 st.write("No debug log available.")
 

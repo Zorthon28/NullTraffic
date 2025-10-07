@@ -177,9 +177,9 @@ def log_debug(message):
 
 
 def perform_logging():
-    api_key = config.get("api_key")
+    api_key = st.secrets.get("api_key", config.get("api_key"))
     if not api_key:
-        log_debug("No API key found in config.")
+        log_debug("No API key found in secrets or config.")
         return
 
     now = datetime.now().isoformat()

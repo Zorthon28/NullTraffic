@@ -18,7 +18,8 @@ if os.path.isfile(CONFIG_FILE):
         config = json.load(f)
 else:
     config = {"origin": "Cto. Zinfandel 3970, 22564", "destination_a": "Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.",
-              "destination_b": "Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C."}
+              "destination_b": "Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.",
+              "destination_c": "Cto. Zinfandel 3970, 22564", "destination_d": "Cto. Zinfandel 3970, 22564"}
 
 # Load current config for refresh
 if os.path.isfile(CONFIG_FILE):
@@ -36,7 +37,7 @@ if not api_key or api_key == "PUT_YOUR_API_KEY_HERE":
     st.stop()
 
 st.title(
-    f"Traffic Data Dashboard: {config['origin']} → A: {config['destination_a']} | B: {config['destination_b']}")
+    f"Traffic Data Dashboard: {config['origin']} → A: {config['destination_a']} | B: {config['destination_b']} | C: {config['destination_c']} | D: {config['destination_d']}")
 
 # Sidebar filters
 st.sidebar.header("Filters")
@@ -44,7 +45,7 @@ date_range = st.sidebar.date_input("Date Range", [], key="date_range")
 weekday_filter = st.sidebar.multiselect("Weekdays", options=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], default=[
                                         "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], key="weekday_filter")
 destination_filter = st.sidebar.selectbox(
-    "Destination", options=["All", "A", "B"], index=0, key="destination_filter")
+    "Destination", options=["All", "A", "B", "C", "D"], index=0, key="destination_filter")
 route_filter = st.sidebar.multiselect("Routes", options=[0, 1, 2, 3, 4], default=[
                                       0, 1, 2, 3, 4], key="route_filter")
 
@@ -76,6 +77,10 @@ if st.sidebar.button("Log Data Now", key="manual_log", disabled=not logging_enab
         f.write("manual")
     st.sidebar.success("Manual log triggered! Data will be logged shortly.")
 
+# Notes for logging
+current_notes = st.sidebar.text_area("Notes (for manual logs)", value="", height=100, key="notes_input",
+                                     help="Add notes for unusual traffic events, crashes, etc. These will be included in manual log entries.")
+
 st.sidebar.markdown("---")
 st.sidebar.write(f"Auto-refresh every {refresh_interval} seconds")
 
@@ -88,12 +93,18 @@ current_destination_a = st.sidebar.text_input(
     "Destination A", value=config["destination_a"], key="destination_a_input", disabled=logging_enabled)
 current_destination_b = st.sidebar.text_input(
     "Destination B", value=config["destination_b"], key="destination_b_input", disabled=logging_enabled)
+current_destination_c = st.sidebar.text_input(
+    "Destination C", value=config["destination_c"], key="destination_c_input", disabled=logging_enabled)
+current_destination_d = st.sidebar.text_input(
+    "Destination D", value=config["destination_d"], key="destination_d_input", disabled=logging_enabled)
 
 if st.sidebar.button("Update Configuration", key="update_config", disabled=logging_enabled):
     new_config = config.copy()
     new_config["origin"] = current_origin
     new_config["destination_a"] = current_destination_a
     new_config["destination_b"] = current_destination_b
+    new_config["destination_c"] = current_destination_c
+    new_config["destination_d"] = current_destination_d
     new_config["interval_minutes"] = current_interval
     # Preserve other keys like api_key
     with open(CONFIG_FILE, 'w') as f:
@@ -107,7 +118,7 @@ if st.sidebar.button("Clear All Data", key="clear_data"):
     with open('traffic_data.csv', 'w') as f:
         # Write header only
         f.write(
-            'timestamp,weekday,time,duration_sec,duration_text,destination,route,summary\n')
+            'timestamp,weekday,time,duration_sec,duration_text,destination,route,summary,notes\n')
     st.sidebar.success("All data cleared!")
     st.rerun()
 
@@ -126,17 +137,17 @@ def load_data():
         st.warning("CSV format issue detected. Attempting to fix...")
         # Assume the new format
         df = pd.read_csv('traffic_data.csv', names=[
-                         'timestamp', 'weekday', 'time', 'duration_sec', 'duration_text', 'destination', 'route', 'summary'], header=0)
+                         'timestamp', 'weekday', 'time', 'duration_sec', 'duration_text', 'destination', 'route', 'summary', 'notes'], header=0)
         df['timestamp'] = pd.to_datetime(df['timestamp'])
         df['hour'] = df['timestamp'].dt.hour
         return df
 
 
 # Logging functions from traffic_logger.py
-def get_travel_time(destination, api_key):
+def get_travel_time(origin, destination, api_key, dest_label):
     url = (
         f"https://maps.googleapis.com/maps/api/directions/json?"
-        f"origin={config['origin']}&destination={destination}"
+        f"origin={origin}&destination={destination}"
         f"&departure_time=now&alternatives=true&mode=driving&key={api_key}"
     )
     response = requests.get(url)
@@ -148,17 +159,27 @@ def get_travel_time(destination, api_key):
             duration_in_traffic = route["legs"][0]["duration_in_traffic"]["value"]
             duration_text = route["legs"][0]["duration_in_traffic"]["text"]
             summary = route.get("summary", f"Route {i}")
-            routes.append((duration_in_traffic, duration_text, i, summary))
+            warnings = route.get("warnings", [])
+            warnings_text = "; ".join(warnings) if warnings else ""
+            routes.append((duration_in_traffic, duration_text,
+                          i, summary, warnings_text))
+
+        # Filter to allowed routes if specified
+        allowed = config.get("allowed_routes", {}).get(dest_label, [])
+        if allowed:
+            routes = [r for r in routes if r[3] in allowed]
+
         return routes
     except (IndexError, KeyError) as e:
         log_debug(
-            f"Warning: Could not extract travel time for {destination}. Error: {e}")
+            f"Warning: Could not extract travel time from {origin} to {destination}. Error: {e}")
         return []
 
 
-def log_to_csv(timestamp, routes, destination):
+def log_to_csv(timestamp, routes, destination, notes=""):
     rows = []
-    for duration_sec, duration_text, route_id, summary in routes:
+    for duration_sec, duration_text, route_id, summary, warnings in routes:
+        combined_notes = f"{notes}; {warnings}".strip("; ").strip()
         rows.append({
             "timestamp": timestamp,
             "weekday": datetime.now().strftime("%A"),
@@ -167,7 +188,8 @@ def log_to_csv(timestamp, routes, destination):
             "duration_text": duration_text,
             "destination": destination,
             "route": route_id,
-            "summary": summary
+            "summary": summary,
+            "notes": combined_notes
         })
     df = pd.DataFrame(rows)
     if not os.path.isfile('traffic_data.csv'):
@@ -182,7 +204,7 @@ def log_debug(message):
     print(message)
 
 
-def perform_logging():
+def perform_logging(notes=""):
     api_key = st.secrets.get("api_key", config.get("api_key"))
     if not api_key:
         log_debug("No API key found in secrets or config.")
@@ -192,24 +214,48 @@ def perform_logging():
     log_debug(f"Performing logging at {now}")
 
     # Log for Destination A
-    routes_a = get_travel_time(config["destination_a"], api_key)
+    routes_a = get_travel_time(
+        config["origin"], config["destination_a"], api_key, "A")
     if routes_a:
-        log_to_csv(now, routes_a, "A")
-        for dur, text, rid, summary in routes_a:
+        log_to_csv(now, routes_a, "A", notes)
+        for dur, text, rid, summary, warnings in routes_a:
             log_debug(
                 f"[{now}] Destination A Route {rid} ({summary}): {text} ({dur}s)")
     else:
         log_debug(f"[{now}] Failed to fetch data for Destination A.")
 
     # Log for Destination B
-    routes_b = get_travel_time(config["destination_b"], api_key)
+    routes_b = get_travel_time(
+        config["origin"], config["destination_b"], api_key, "B")
     if routes_b:
-        log_to_csv(now, routes_b, "B")
-        for dur, text, rid, summary in routes_b:
+        log_to_csv(now, routes_b, "B", notes)
+        for dur, text, rid, summary, warnings in routes_b:
             log_debug(
                 f"[{now}] Destination B Route {rid} ({summary}): {text} ({dur}s)")
     else:
         log_debug(f"[{now}] Failed to fetch data for Destination B.")
+
+    # Log for Destination C (return from A)
+    routes_c = get_travel_time(
+        config["destination_a"], config["destination_c"], api_key, "C")
+    if routes_c:
+        log_to_csv(now, routes_c, "C", notes)
+        for dur, text, rid, summary, warnings in routes_c:
+            log_debug(
+                f"[{now}] Destination C Route {rid} ({summary}): {text} ({dur}s)")
+    else:
+        log_debug(f"[{now}] Failed to fetch data for Destination C.")
+
+    # Log for Destination D (return from B)
+    routes_d = get_travel_time(
+        config["destination_b"], config["destination_d"], api_key, "D")
+    if routes_d:
+        log_to_csv(now, routes_d, "D", notes)
+        for dur, text, rid, summary, warnings in routes_d:
+            log_debug(
+                f"[{now}] Destination D Route {rid} ({summary}): {text} ({dur}s)")
+    else:
+        log_debug(f"[{now}] Failed to fetch data for Destination D.")
 
     log_debug("Logging cycle complete.")
 
@@ -232,7 +278,7 @@ while True:
         if logging_enabled:
             if manual_log_triggered:
                 # Perform manual log
-                perform_logging()
+                perform_logging(current_notes)
                 os.remove("manual_log.txt")
                 st.session_state.last_log_time = current_time
             elif st.session_state.last_log_time is None or (current_time - st.session_state.last_log_time) >= interval_seconds:
@@ -359,7 +405,7 @@ while True:
 
                 # Route details
                 with st.expander("View Route Details and Maps"):
-                    for dest in ['A', 'B']:
+                    for dest in ['A', 'B', 'C', 'D']:
                         if dest in filtered_df['destination'].values:
                             st.write(f"**Destination {dest}**")
                             dest_data = filtered_df[filtered_df['destination'] == dest]
@@ -372,8 +418,22 @@ while True:
                                 st.write(
                                     f"  Route {route_id} ({summary}): Average {avg_dur/60:.1f} min")
                                 # Link to Google Maps
-                                origin_enc = config['origin'].replace(' ', '+')
-                                dest_name = config['destination_a'] if dest == 'A' else config['destination_b']
+                                if dest == 'A':
+                                    origin_enc = config['origin'].replace(
+                                        ' ', '+')
+                                    dest_name = config['destination_a']
+                                elif dest == 'B':
+                                    origin_enc = config['origin'].replace(
+                                        ' ', '+')
+                                    dest_name = config['destination_b']
+                                elif dest == 'C':
+                                    origin_enc = config['destination_a'].replace(
+                                        ' ', '+')
+                                    dest_name = config['destination_c']
+                                elif dest == 'D':
+                                    origin_enc = config['destination_b'].replace(
+                                        ' ', '+')
+                                    dest_name = config['destination_d']
                                 dest_enc = dest_name.replace(' ', '+')
                                 url = f"https://www.google.com/maps/dir/{origin_enc}/{dest_enc}/?dirflg=h"
                                 st.markdown(

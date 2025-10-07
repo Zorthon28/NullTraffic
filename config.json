@@ -2,7 +2,15 @@
   "origin": "Cto. Zinfandel 3970, 22564",
   "destination_a": "Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.",
   "destination_b": "Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.",
+  "destination_c": "Cto. Zinfandel 3970, 22564",
+  "destination_d": "Cto. Zinfandel 3970, 22564",
   "interval_minutes": 5,
   "api_key": "PUT_YOUR_API_KEY_HERE",
-  "csv_file": "traffic_data.csv"
+  "csv_file": "traffic_data.csv",
+  "allowed_routes": {
+    "A": [],
+    "B": [],
+    "C": [],
+    "D": []
+  }
 }

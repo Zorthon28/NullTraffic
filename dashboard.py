@@ -7,6 +7,7 @@ import time
 import numpy as np
 import requests
 from datetime import datetime
+import pytz
 
 st.set_page_config(page_title="Traffic Dashboard", page_icon="🚗",
                    layout="wide", initial_sidebar_state="expanded")
@@ -177,13 +178,16 @@ def get_travel_time(origin, destination, api_key, dest_label):
 
 
 def log_to_csv(timestamp, routes, destination, notes=""):
+    # Use Tijuana timezone (Pacific Daylight Time, GMT-7)
+    tijuana_tz = pytz.timezone('America/Tijuana')
+    now = datetime.now(tijuana_tz)
     rows = []
     for duration_sec, duration_text, route_id, summary, warnings in routes:
         combined_notes = f"{notes}; {warnings}".strip("; ").strip()
         rows.append({
             "timestamp": timestamp,
-            "weekday": datetime.now().strftime("%A"),
-            "time": datetime.now().strftime("%H:%M"),
+            "weekday": now.strftime("%A"),
+            "time": now.strftime("%H:%M"),
             "duration_sec": duration_sec,
             "duration_text": duration_text,
             "destination": destination,
@@ -199,8 +203,9 @@ def log_to_csv(timestamp, routes, destination, notes=""):
 
 
 def log_debug(message):
+    tijuana_tz = pytz.timezone('America/Tijuana')
     with open("debug.log", "a") as f:
-        f.write(f"{datetime.now().isoformat()}: {message}\n")
+        f.write(f"{datetime.now(tijuana_tz).isoformat()}: {message}\n")
     print(message)
 
 

@@ -1,0 +1,419 @@
+2025-10-07T11:39:33.759365: Starting traffic logger: Tijuana,MX -> Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C. and Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:39:33.759365: Interval: 1 minutes
+2025-10-07T11:39:33.759881: Press Ctrl+C to stop.
+
+2025-10-07T11:39:33.760418: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:39:33.760956: DEBUG: Logging enabled.
+2025-10-07T11:39:33.761497: DEBUG: Manual log triggered and file removed.
+2025-10-07T11:39:33.762032: DEBUG: Manual logging started.
+2025-10-07T11:39:33.762032: DEBUG: Current time: 2025-10-07T11:39:33.762032
+2025-10-07T11:39:33.762571: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T11:39:33.984284: DEBUG: Routes A received: 3 routes
+2025-10-07T11:39:33.996087: [2025-10-07T11:39:33.762032] Destination A Route 0: 10 mins (582s)
+2025-10-07T11:39:33.996620: [2025-10-07T11:39:33.762032] Destination A Route 1: 12 mins (700s)
+2025-10-07T11:39:33.997160: [2025-10-07T11:39:33.762032] Destination A Route 2: 14 mins (810s)
+2025-10-07T11:39:33.997160: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:39:34.213661: DEBUG: Routes B received: 2 routes
+2025-10-07T11:39:34.215269: [2025-10-07T11:39:33.762032] Destination B Route 0: 14 mins (813s)
+2025-10-07T11:39:34.215795: [2025-10-07T11:39:33.762032] Destination B Route 1: 18 mins (1088s)
+2025-10-07T11:39:34.216329: DEBUG: Logging cycle complete.
+2025-10-07T11:39:34.216876: DEBUG: Manual logging finished.
+2025-10-07T11:39:34.216876: DEBUG: Manual log, no sleep.
+2025-10-07T11:39:34.217413: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:39:34.217955: DEBUG: Logging enabled.
+2025-10-07T11:39:34.218492: DEBUG: Current time: 2025-10-07T11:39:34.217955
+2025-10-07T11:39:34.218492: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T11:39:34.342266: DEBUG: Routes A received: 3 routes
+2025-10-07T11:39:34.344396: [2025-10-07T11:39:34.217955] Destination A Route 0: 10 mins (582s)
+2025-10-07T11:39:34.344396: [2025-10-07T11:39:34.217955] Destination A Route 1: 12 mins (700s)
+2025-10-07T11:39:34.344933: [2025-10-07T11:39:34.217955] Destination A Route 2: 14 mins (810s)
+2025-10-07T11:39:34.345479: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:39:34.494417: DEBUG: Routes B received: 2 routes
+2025-10-07T11:39:34.496028: [2025-10-07T11:39:34.217955] Destination B Route 0: 14 mins (813s)
+2025-10-07T11:39:34.496549: [2025-10-07T11:39:34.217955] Destination B Route 1: 18 mins (1088s)
+2025-10-07T11:39:34.496549: DEBUG: Logging cycle complete.
+2025-10-07T11:39:34.497086: DEBUG: Sleeping for 60 seconds
+2025-10-07T11:40:34.497938: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:40:34.498473: DEBUG: Logging disabled. Waiting...
+2025-10-07T11:40:44.499782: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:40:44.500869: DEBUG: Logging disabled. Waiting...
+2025-10-07T11:40:54.501728: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:40:54.502261: DEBUG: Logging disabled. Waiting...
+2025-10-07T11:41:04.502982: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:41:04.503517: DEBUG: Logging disabled. Waiting...
+2025-10-07T11:41:14.504334: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:41:14.504869: DEBUG: Logging disabled. Waiting...
+2025-10-07T11:41:24.506047: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:41:24.507117: DEBUG: Logging enabled.
+2025-10-07T11:41:24.507676: DEBUG: Current time: 2025-10-07T11:41:24.507117
+2025-10-07T11:41:24.508244: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T11:41:24.707256: DEBUG: Routes A received: 3 routes
+2025-10-07T11:41:24.709444: [2025-10-07T11:41:24.507117] Destination A Route 0: 10 mins (596s)
+2025-10-07T11:41:24.709984: [2025-10-07T11:41:24.507117] Destination A Route 1: 12 mins (731s)
+2025-10-07T11:41:24.710531: [2025-10-07T11:41:24.507117] Destination A Route 2: 14 mins (859s)
+2025-10-07T11:41:24.711085: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:41:24.849345: DEBUG: Routes B received: 1 routes
+2025-10-07T11:41:24.851519: [2025-10-07T11:41:24.507117] Destination B Route 0: 14 mins (820s)
+2025-10-07T11:41:24.852050: DEBUG: Logging cycle complete.
+2025-10-07T11:41:24.852590: DEBUG: Sleeping for 60 seconds
+2025-10-07T11:42:24.853140: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:42:24.853683: DEBUG: Logging enabled.
+2025-10-07T11:42:24.854754: DEBUG: Manual log triggered and file removed.
+2025-10-07T11:42:24.855293: DEBUG: Manual logging started.
+2025-10-07T11:42:24.855837: DEBUG: Current time: 2025-10-07T11:42:24.855293
+2025-10-07T11:42:24.855837: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T11:42:25.004210: DEBUG: Routes A received: 3 routes
+2025-10-07T11:42:25.005804: [2025-10-07T11:42:24.855293] Destination A Route 0: 10 mins (588s)
+2025-10-07T11:42:25.006342: [2025-10-07T11:42:24.855293] Destination A Route 1: 12 mins (703s)
+2025-10-07T11:42:25.006884: [2025-10-07T11:42:24.855293] Destination A Route 2: 14 mins (819s)
+2025-10-07T11:42:25.007429: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:42:25.184586: DEBUG: Routes B received: 2 routes
+2025-10-07T11:42:25.186742: [2025-10-07T11:42:24.855293] Destination B Route 0: 14 mins (814s)
+2025-10-07T11:42:25.186742: [2025-10-07T11:42:24.855293] Destination B Route 1: 18 mins (1082s)
+2025-10-07T11:42:25.187282: DEBUG: Logging cycle complete.
+2025-10-07T11:42:25.187824: DEBUG: Manual logging finished.
+2025-10-07T11:42:25.188363: DEBUG: Manual log, no sleep.
+2025-10-07T11:42:25.188912: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:42:25.188912: DEBUG: Logging enabled.
+2025-10-07T11:42:25.189468: DEBUG: Current time: 2025-10-07T11:42:25.189468
+2025-10-07T11:42:25.190008: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T11:42:25.331009: DEBUG: Routes A received: 3 routes
+2025-10-07T11:42:25.333178: [2025-10-07T11:42:25.189468] Destination A Route 0: 10 mins (588s)
+2025-10-07T11:42:25.333723: [2025-10-07T11:42:25.189468] Destination A Route 1: 12 mins (703s)
+2025-10-07T11:42:25.333723: [2025-10-07T11:42:25.189468] Destination A Route 2: 14 mins (819s)
+2025-10-07T11:42:25.334678: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:42:25.465650: DEBUG: Routes B received: 2 routes
+2025-10-07T11:42:25.467812: [2025-10-07T11:42:25.189468] Destination B Route 0: 14 mins (814s)
+2025-10-07T11:42:25.467812: [2025-10-07T11:42:25.189468] Destination B Route 1: 18 mins (1082s)
+2025-10-07T11:42:25.468356: DEBUG: Logging cycle complete.
+2025-10-07T11:42:25.468909: DEBUG: Sleeping for 60 seconds
+2025-10-07T11:43:25.469719: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:43:25.470261: DEBUG: Logging enabled.
+2025-10-07T11:43:25.470802: DEBUG: Current time: 2025-10-07T11:43:25.470802
+2025-10-07T11:43:25.471334: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T11:43:25.625982: DEBUG: Routes A received: 3 routes
+2025-10-07T11:43:25.627581: [2025-10-07T11:43:25.470802] Destination A Route 0: 10 mins (574s)
+2025-10-07T11:43:25.628107: [2025-10-07T11:43:25.470802] Destination A Route 1: 12 mins (695s)
+2025-10-07T11:43:25.628720: [2025-10-07T11:43:25.470802] Destination A Route 2: 13 mins (774s)
+2025-10-07T11:43:25.628720: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:43:25.776187: DEBUG: Routes B received: 2 routes
+2025-10-07T11:43:25.777793: [2025-10-07T11:43:25.470802] Destination B Route 0: 14 mins (815s)
+2025-10-07T11:43:25.778301: [2025-10-07T11:43:25.470802] Destination B Route 1: 18 mins (1066s)
+2025-10-07T11:43:25.778931: DEBUG: Logging cycle complete.
+2025-10-07T11:43:25.778931: DEBUG: Sleeping for 60 seconds
+2025-10-07T11:44:22.027776: Starting traffic logger: Cto. Zinfandel 3970, 22564 B.C. -> Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C. and Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:44:22.028304: Interval: 1 minutes
+2025-10-07T11:44:22.028304: Press Ctrl+C to stop.
+
+2025-10-07T11:44:22.028929: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:44:22.029501: DEBUG: Logging enabled.
+2025-10-07T11:44:22.030042: DEBUG: Manual log triggered and file removed.
+2025-10-07T11:44:22.030574: DEBUG: Manual logging started.
+2025-10-07T11:44:22.031084: DEBUG: Current time: 2025-10-07T11:44:22.031084
+2025-10-07T11:44:22.031633: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T11:44:22.389603: DEBUG: Routes A received: 3 routes
+2025-10-07T11:44:22.394069: [2025-10-07T11:44:22.031084] Destination A Route 0: 34 mins (2028s)
+2025-10-07T11:44:22.394604: [2025-10-07T11:44:22.031084] Destination A Route 1: 37 mins (2231s)
+2025-10-07T11:44:22.395137: [2025-10-07T11:44:22.031084] Destination A Route 2: 40 mins (2427s)
+2025-10-07T11:44:22.395686: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:44:22.904910: DEBUG: Routes B received: 3 routes
+2025-10-07T11:44:22.907068: [2025-10-07T11:44:22.031084] Destination B Route 0: 40 mins (2407s)
+2025-10-07T11:44:22.907607: [2025-10-07T11:44:22.031084] Destination B Route 1: 41 mins (2463s)
+2025-10-07T11:44:22.907607: [2025-10-07T11:44:22.031084] Destination B Route 2: 46 mins (2737s)
+2025-10-07T11:44:22.908152: DEBUG: Logging cycle complete.
+2025-10-07T11:44:22.908784: DEBUG: Manual logging finished.
+2025-10-07T11:44:22.908784: DEBUG: Manual log, no sleep.
+2025-10-07T11:44:22.909323: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:44:22.909865: DEBUG: Logging enabled.
+2025-10-07T11:44:22.910413: DEBUG: Current time: 2025-10-07T11:44:22.910413
+2025-10-07T11:44:22.910925: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T11:44:23.125457: DEBUG: Routes A received: 3 routes
+2025-10-07T11:44:23.127054: [2025-10-07T11:44:22.910413] Destination A Route 0: 34 mins (2028s)
+2025-10-07T11:44:23.127054: [2025-10-07T11:44:22.910413] Destination A Route 1: 37 mins (2229s)
+2025-10-07T11:44:23.128128: [2025-10-07T11:44:22.910413] Destination A Route 2: 40 mins (2425s)
+2025-10-07T11:44:23.128128: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:44:23.379335: DEBUG: Routes B received: 3 routes
+2025-10-07T11:44:23.380914: [2025-10-07T11:44:22.910413] Destination B Route 0: 40 mins (2407s)
+2025-10-07T11:44:23.381454: [2025-10-07T11:44:22.910413] Destination B Route 1: 41 mins (2463s)
+2025-10-07T11:44:23.381993: [2025-10-07T11:44:22.910413] Destination B Route 2: 46 mins (2737s)
+2025-10-07T11:44:23.381993: DEBUG: Logging cycle complete.
+2025-10-07T11:44:23.382536: DEBUG: Sleeping for 60 seconds
+2025-10-07T11:45:23.382977: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:45:23.384064: DEBUG: Logging enabled.
+2025-10-07T11:45:23.384615: DEBUG: Manual log triggered and file removed.
+2025-10-07T11:45:23.385159: DEBUG: Manual logging started.
+2025-10-07T11:45:23.385698: DEBUG: Current time: 2025-10-07T11:45:23.385159
+2025-10-07T11:45:23.385698: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T11:45:23.601697: DEBUG: Routes A received: 3 routes
+2025-10-07T11:45:23.603303: [2025-10-07T11:45:23.385159] Destination A Route 0: 34 mins (2036s)
+2025-10-07T11:45:23.603827: [2025-10-07T11:45:23.385159] Destination A Route 1: 37 mins (2220s)
+2025-10-07T11:45:23.603827: [2025-10-07T11:45:23.385159] Destination A Route 2: 40 mins (2422s)
+2025-10-07T11:45:23.604367: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:45:23.956205: DEBUG: Routes B received: 3 routes
+2025-10-07T11:45:23.957799: [2025-10-07T11:45:23.385159] Destination B Route 0: 40 mins (2404s)
+2025-10-07T11:45:23.957799: [2025-10-07T11:45:23.385159] Destination B Route 1: 42 mins (2526s)
+2025-10-07T11:45:23.958333: [2025-10-07T11:45:23.385159] Destination B Route 2: 45 mins (2700s)
+2025-10-07T11:45:23.958909: DEBUG: Logging cycle complete.
+2025-10-07T11:45:23.958909: DEBUG: Manual logging finished.
+2025-10-07T11:45:23.959532: DEBUG: Manual log, no sleep.
+2025-10-07T11:45:23.960076: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:45:23.960623: DEBUG: Logging enabled.
+2025-10-07T11:45:23.961215: DEBUG: Current time: 2025-10-07T11:45:23.960623
+2025-10-07T11:45:23.961215: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T11:45:24.138635: DEBUG: Routes A received: 3 routes
+2025-10-07T11:45:24.140294: [2025-10-07T11:45:23.960623] Destination A Route 0: 34 mins (2036s)
+2025-10-07T11:45:24.140824: [2025-10-07T11:45:23.960623] Destination A Route 1: 37 mins (2220s)
+2025-10-07T11:45:24.141365: [2025-10-07T11:45:23.960623] Destination A Route 2: 40 mins (2422s)
+2025-10-07T11:45:24.141365: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:45:24.402115: DEBUG: Routes B received: 3 routes
+2025-10-07T11:45:24.404288: [2025-10-07T11:45:23.960623] Destination B Route 0: 40 mins (2404s)
+2025-10-07T11:45:24.404833: [2025-10-07T11:45:23.960623] Destination B Route 1: 42 mins (2526s)
+2025-10-07T11:45:24.405385: [2025-10-07T11:45:23.960623] Destination B Route 2: 45 mins (2700s)
+2025-10-07T11:45:24.405936: DEBUG: Logging cycle complete.
+2025-10-07T11:45:24.406484: DEBUG: Sleeping for 60 seconds
+2025-10-07T11:46:24.407190: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:46:24.408278: DEBUG: Logging enabled.
+2025-10-07T11:46:24.408838: DEBUG: Current time: 2025-10-07T11:46:24.408278
+2025-10-07T11:46:24.408838: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T11:46:24.655742: DEBUG: Routes A received: 3 routes
+2025-10-07T11:46:24.657352: [2025-10-07T11:46:24.408278] Destination A Route 0: 34 mins (2033s)
+2025-10-07T11:46:24.657886: [2025-10-07T11:46:24.408278] Destination A Route 1: 37 mins (2224s)
+2025-10-07T11:46:24.658420: [2025-10-07T11:46:24.408278] Destination A Route 2: 40 mins (2423s)
+2025-10-07T11:46:24.658956: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:46:24.974301: DEBUG: Routes B received: 3 routes
+2025-10-07T11:46:24.975933: [2025-10-07T11:46:24.408278] Destination B Route 0: 40 mins (2405s)
+2025-10-07T11:46:24.976473: [2025-10-07T11:46:24.408278] Destination B Route 1: 42 mins (2500s)
+2025-10-07T11:46:24.976473: [2025-10-07T11:46:24.408278] Destination B Route 2: 45 mins (2713s)
+2025-10-07T11:46:24.977255: DEBUG: Logging cycle complete.
+2025-10-07T11:46:24.977255: DEBUG: Sleeping for 60 seconds
+2025-10-07T11:47:10.732855: Starting traffic logger: Cto. Zinfandel 3970, 22564 -> Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C. and Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:47:10.732855: Interval: 1 minutes
+2025-10-07T11:47:10.733383: Press Ctrl+C to stop.
+
+2025-10-07T11:47:10.733932: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:47:10.734477: DEBUG: Logging enabled.
+2025-10-07T11:47:10.734477: DEBUG: Current time: 2025-10-07T11:47:10.734477
+2025-10-07T11:47:10.735015: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T11:47:11.028905: DEBUG: Routes A received: 3 routes
+2025-10-07T11:47:11.032625: [2025-10-07T11:47:10.734477] Destination A Route 0: 34 mins (2050s)
+2025-10-07T11:47:11.032625: [2025-10-07T11:47:10.734477] Destination A Route 1: 37 mins (2222s)
+2025-10-07T11:47:11.033173: [2025-10-07T11:47:10.734477] Destination A Route 2: 40 mins (2418s)
+2025-10-07T11:47:11.033720: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:47:11.368846: DEBUG: Routes B received: 3 routes
+2025-10-07T11:47:11.370978: [2025-10-07T11:47:10.734477] Destination B Route 0: 40 mins (2411s)
+2025-10-07T11:47:11.370978: [2025-10-07T11:47:10.734477] Destination B Route 1: 41 mins (2480s)
+2025-10-07T11:47:11.371519: [2025-10-07T11:47:10.734477] Destination B Route 2: 45 mins (2728s)
+2025-10-07T11:47:11.372060: DEBUG: Logging cycle complete.
+2025-10-07T11:47:11.372602: DEBUG: Sleeping for 60 seconds
+2025-10-07T11:48:31.186404: Starting traffic logger: Cto. Zinfandel 3970, 22564 -> Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C. and Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:48:31.186938: Interval: 5 minutes
+2025-10-07T11:48:31.186938: Press Ctrl+C to stop.
+
+2025-10-07T11:48:31.187482: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:48:31.188026: DEBUG: Logging disabled. Waiting...
+2025-10-07T11:48:41.188378: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:48:41.188926: DEBUG: Logging disabled. Waiting...
+2025-10-07T11:48:51.190047: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:48:51.191099: DEBUG: Logging enabled.
+2025-10-07T11:48:51.191646: DEBUG: Manual log triggered and file removed.
+2025-10-07T11:48:51.192239: DEBUG: Manual logging started.
+2025-10-07T11:48:51.193337: DEBUG: Current time: 2025-10-07T11:48:51.192750
+2025-10-07T11:48:51.193892: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T11:48:51.421991: DEBUG: Routes A received: 3 routes
+2025-10-07T11:48:51.427194: [2025-10-07T11:48:51.192750] Destination A Route 0: 34 mins (2015s)
+2025-10-07T11:48:51.427738: [2025-10-07T11:48:51.192750] Destination A Route 1: 37 mins (2220s)
+2025-10-07T11:48:51.427738: [2025-10-07T11:48:51.192750] Destination A Route 2: 41 mins (2444s)
+2025-10-07T11:48:51.428288: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:48:51.782470: DEBUG: Routes B received: 3 routes
+2025-10-07T11:48:51.784611: [2025-10-07T11:48:51.192750] Destination B Route 0: 40 mins (2391s)
+2025-10-07T11:48:51.785148: [2025-10-07T11:48:51.192750] Destination B Route 1: 41 mins (2439s)
+2025-10-07T11:48:51.785687: [2025-10-07T11:48:51.192750] Destination B Route 2: 45 mins (2699s)
+2025-10-07T11:48:51.786226: DEBUG: Logging cycle complete.
+2025-10-07T11:48:51.786226: DEBUG: Manual logging finished.
+2025-10-07T11:48:51.786771: DEBUG: Manual log, no sleep.
+2025-10-07T11:48:51.787308: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:48:51.787855: DEBUG: Logging enabled.
+2025-10-07T11:48:51.788419: DEBUG: Current time: 2025-10-07T11:48:51.787855
+2025-10-07T11:48:51.788967: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T11:48:52.008068: DEBUG: Routes A received: 3 routes
+2025-10-07T11:48:52.010217: [2025-10-07T11:48:51.787855] Destination A Route 0: 34 mins (2015s)
+2025-10-07T11:48:52.010217: [2025-10-07T11:48:51.787855] Destination A Route 1: 37 mins (2220s)
+2025-10-07T11:48:52.010759: [2025-10-07T11:48:51.787855] Destination A Route 2: 41 mins (2444s)
+2025-10-07T11:48:52.011301: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:48:52.192067: DEBUG: Routes B received: 3 routes
+2025-10-07T11:48:52.194298: [2025-10-07T11:48:51.787855] Destination B Route 0: 40 mins (2391s)
+2025-10-07T11:48:52.194838: [2025-10-07T11:48:51.787855] Destination B Route 1: 41 mins (2439s)
+2025-10-07T11:48:52.194838: [2025-10-07T11:48:51.787855] Destination B Route 2: 45 mins (2699s)
+2025-10-07T11:48:52.195387: DEBUG: Logging cycle complete.
+2025-10-07T11:48:52.195929: DEBUG: Sleeping for 300 seconds
+2025-10-07T11:50:31.700338: Starting traffic logger: Cto. Zinfandel 3970, 22564 -> Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C. and Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:50:31.700866: Interval: 5 minutes
+2025-10-07T11:50:31.701415: Press Ctrl+C to stop.
+
+2025-10-07T11:50:31.701415: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:50:31.701955: DEBUG: Logging enabled.
+2025-10-07T11:50:31.702496: DEBUG: Current time: 2025-10-07T11:50:31.701955
+2025-10-07T11:50:31.702496: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T11:50:31.952498: DEBUG: Routes A received: 3 routes
+2025-10-07T11:50:31.956810: [2025-10-07T11:50:31.701955] Destination A Route 0: 34 mins (2013s)
+2025-10-07T11:50:31.957352: [2025-10-07T11:50:31.701955] Destination A Route 1: 37 mins (2232s)
+2025-10-07T11:50:31.957352: [2025-10-07T11:50:31.701955] Destination A Route 2: 41 mins (2439s)
+2025-10-07T11:50:31.957896: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:50:32.203571: DEBUG: Routes B received: 3 routes
+2025-10-07T11:50:32.205699: [2025-10-07T11:50:31.701955] Destination B Route 0: 39 mins (2362s)
+2025-10-07T11:50:32.206242: [2025-10-07T11:50:31.701955] Destination B Route 1: 45 mins (2714s)
+2025-10-07T11:50:32.206242: [2025-10-07T11:50:31.701955] Destination B Route 2: 47 mins (2825s)
+2025-10-07T11:50:32.206788: DEBUG: Logging cycle complete.
+2025-10-07T11:50:32.207333: DEBUG: Sleeping for 300 seconds
+2025-10-07T11:55:32.207927: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:55:32.208460: DEBUG: Logging enabled.
+2025-10-07T11:55:32.209620: DEBUG: Manual log triggered and file removed.
+2025-10-07T11:55:32.209620: DEBUG: Manual logging started.
+2025-10-07T11:55:32.210158: DEBUG: Current time: 2025-10-07T11:55:32.210158
+2025-10-07T11:55:32.210668: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T11:55:32.490718: DEBUG: Routes A received: 3 routes
+2025-10-07T11:55:32.493463: [2025-10-07T11:55:32.210158] Destination A Route 0: 34 mins (2010s)
+2025-10-07T11:55:32.494006: [2025-10-07T11:55:32.210158] Destination A Route 1: 37 mins (2248s)
+2025-10-07T11:55:32.494006: [2025-10-07T11:55:32.210158] Destination A Route 2: 41 mins (2482s)
+2025-10-07T11:55:32.494566: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:55:32.890826: DEBUG: Routes B received: 3 routes
+2025-10-07T11:55:32.893051: [2025-10-07T11:55:32.210158] Destination B Route 0: 41 mins (2463s)
+2025-10-07T11:55:32.893590: [2025-10-07T11:55:32.210158] Destination B Route 1: 42 mins (2492s)
+2025-10-07T11:55:32.894141: [2025-10-07T11:55:32.210158] Destination B Route 2: 44 mins (2660s)
+2025-10-07T11:55:32.894707: DEBUG: Logging cycle complete.
+2025-10-07T11:55:32.895260: DEBUG: Manual logging finished.
+2025-10-07T11:55:32.895260: DEBUG: Manual log, no sleep.
+2025-10-07T11:55:32.895809: DEBUG: Checking logging_enabled.txt
+2025-10-07T11:55:32.896363: DEBUG: Logging enabled.
+2025-10-07T11:55:32.896914: DEBUG: Current time: 2025-10-07T11:55:32.896363
+2025-10-07T11:55:32.896914: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T11:55:33.234241: DEBUG: Routes A received: 3 routes
+2025-10-07T11:55:33.236407: [2025-10-07T11:55:32.896363] Destination A Route 0: 34 mins (2010s)
+2025-10-07T11:55:33.236945: [2025-10-07T11:55:32.896363] Destination A Route 1: 37 mins (2248s)
+2025-10-07T11:55:33.237490: [2025-10-07T11:55:32.896363] Destination A Route 2: 41 mins (2482s)
+2025-10-07T11:55:33.237997: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T11:55:33.408892: DEBUG: Routes B received: 3 routes
+2025-10-07T11:55:33.411071: [2025-10-07T11:55:32.896363] Destination B Route 0: 41 mins (2463s)
+2025-10-07T11:55:33.411606: [2025-10-07T11:55:32.896363] Destination B Route 1: 42 mins (2492s)
+2025-10-07T11:55:33.412144: [2025-10-07T11:55:32.896363] Destination B Route 2: 44 mins (2660s)
+2025-10-07T11:55:33.412691: DEBUG: Logging cycle complete.
+2025-10-07T11:55:33.413236: DEBUG: Sleeping for 300 seconds
+2025-10-07T12:00:33.413722: DEBUG: Checking logging_enabled.txt
+2025-10-07T12:00:33.414254: DEBUG: Logging enabled.
+2025-10-07T12:00:33.414839: DEBUG: Current time: 2025-10-07T12:00:33.414839
+2025-10-07T12:00:33.415393: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T12:00:33.749611: DEBUG: Routes A received: 3 routes
+2025-10-07T12:00:33.751891: [2025-10-07T12:00:33.414839] Destination A Route 0: 36 mins (2132s)
+2025-10-07T12:00:33.752424: [2025-10-07T12:00:33.414839] Destination A Route 1: 38 mins (2277s)
+2025-10-07T12:00:33.752971: [2025-10-07T12:00:33.414839] Destination A Route 2: 42 mins (2524s)
+2025-10-07T12:00:33.752971: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T12:00:34.111530: DEBUG: Routes B received: 3 routes
+2025-10-07T12:00:34.113682: [2025-10-07T12:00:33.414839] Destination B Route 0: 42 mins (2508s)
+2025-10-07T12:00:34.114213: [2025-10-07T12:00:33.414839] Destination B Route 1: 42 mins (2504s)
+2025-10-07T12:00:34.114752: [2025-10-07T12:00:33.414839] Destination B Route 2: 46 mins (2761s)
+2025-10-07T12:00:34.115294: DEBUG: Logging cycle complete.
+2025-10-07T12:00:34.115294: DEBUG: Sleeping for 300 seconds
+2025-10-07T12:05:34.116348: DEBUG: Checking logging_enabled.txt
+2025-10-07T12:05:34.117385: DEBUG: Logging enabled.
+2025-10-07T12:05:34.117925: DEBUG: Current time: 2025-10-07T12:05:34.117385
+2025-10-07T12:05:34.119195: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T12:05:34.478170: DEBUG: Routes A received: 3 routes
+2025-10-07T12:05:34.480405: [2025-10-07T12:05:34.117385] Destination A Route 0: 35 mins (2114s)
+2025-10-07T12:05:34.480953: [2025-10-07T12:05:34.117385] Destination A Route 1: 38 mins (2296s)
+2025-10-07T12:05:34.481504: [2025-10-07T12:05:34.117385] Destination A Route 2: 42 mins (2493s)
+2025-10-07T12:05:34.481504: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T12:05:34.808714: DEBUG: Routes B received: 3 routes
+2025-10-07T12:05:34.810385: [2025-10-07T12:05:34.117385] Destination B Route 0: 41 mins (2446s)
+2025-10-07T12:05:34.810923: [2025-10-07T12:05:34.117385] Destination B Route 1: 46 mins (2739s)
+2025-10-07T12:05:34.810923: [2025-10-07T12:05:34.117385] Destination B Route 2: 48 mins (2867s)
+2025-10-07T12:05:34.811459: DEBUG: Logging cycle complete.
+2025-10-07T12:05:34.812000: DEBUG: Sleeping for 300 seconds
+2025-10-07T12:07:04.728602: Starting traffic logger: Cto. Zinfandel 3970, 22564 -> Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C. and Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T12:07:04.729141: Interval: 5 minutes
+2025-10-07T12:07:04.729687: Press Ctrl+C to stop.
+
+2025-10-07T12:07:04.730229: DEBUG: Checking logging_enabled.txt
+2025-10-07T12:07:04.730229: DEBUG: Logging enabled.
+2025-10-07T12:07:04.730764: DEBUG: Current time: 2025-10-07T12:07:04.730764
+2025-10-07T12:07:04.731312: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T12:07:05.028497: DEBUG: Routes A received: 3 routes
+2025-10-07T12:08:07.690656: Starting traffic logger: Cto. Zinfandel 3970, 22564 -> Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C. and Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T12:08:07.691184: Interval: 5 minutes
+2025-10-07T12:08:07.691721: Press Ctrl+C to stop.
+
+2025-10-07T12:08:07.692271: DEBUG: Checking logging_enabled.txt
+2025-10-07T12:08:07.692818: DEBUG: Logging enabled.
+2025-10-07T12:08:07.693357: DEBUG: Current time: 2025-10-07T12:08:07.692818
+2025-10-07T12:08:07.693357: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T12:08:07.896887: DEBUG: Routes A received: 3 routes
+2025-10-07T12:11:43.225148: Starting traffic logger: Cto. Zinfandel 3970, 22564 -> Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C. and Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T12:11:43.225148: Interval: 5 minutes
+2025-10-07T12:11:43.225683: Press Ctrl+C to stop.
+
+2025-10-07T12:11:43.226233: DEBUG: Checking logging_enabled.txt
+2025-10-07T12:11:43.226233: DEBUG: Logging enabled.
+2025-10-07T12:11:43.226777: DEBUG: Current time: 2025-10-07T12:11:43.226777
+2025-10-07T12:11:43.226777: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T12:11:43.613563: DEBUG: Routes A received: 3 routes
+2025-10-07T12:11:43.617284: [2025-10-07T12:11:43.226777] Destination A Route 0 (Carr. Transpeninsular/México 1): 35 mins (2124s)
+2025-10-07T12:11:43.617816: [2025-10-07T12:11:43.226777] Destination A Route 1 (Blvd. Fundadores): 38 mins (2292s)
+2025-10-07T12:11:43.617816: [2025-10-07T12:11:43.226777] Destination A Route 2 (Lib. Sur): 43 mins (2563s)
+2025-10-07T12:11:43.618362: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T12:11:43.926859: DEBUG: Routes B received: 3 routes
+2025-10-07T12:11:43.929018: [2025-10-07T12:11:43.226777] Destination B Route 0 (Lib. Sur): 41 mins (2481s)
+2025-10-07T12:11:43.929018: [2025-10-07T12:11:43.226777] Destination B Route 1 (Lib. Sur and Lazaro Cardenas Blvd./Blvd. Lázaro Cárdenas): 41 mins (2484s)
+2025-10-07T12:11:43.929552: [2025-10-07T12:11:43.226777] Destination B Route 2 (Carr. Transpeninsular/México 1): 45 mins (2708s)
+2025-10-07T12:11:43.929552: DEBUG: Logging cycle complete.
+2025-10-07T12:11:43.930090: DEBUG: Sleeping for 300 seconds
+2025-10-07T12:14:41.969375: Starting traffic logger: Cto. Zinfandel 3970, 22564 -> Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C. and Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T12:14:41.969904: Interval: 5 minutes
+2025-10-07T12:14:41.970441: Press Ctrl+C to stop.
+
+2025-10-07T12:14:41.970983: DEBUG: Checking logging_enabled.txt
+2025-10-07T12:14:41.971525: DEBUG: Logging enabled.
+2025-10-07T12:14:41.972063: DEBUG: Manual log triggered and file removed.
+2025-10-07T12:14:41.972063: DEBUG: Manual logging started.
+2025-10-07T12:14:41.972599: DEBUG: Current time: 2025-10-07T12:14:41.972599
+2025-10-07T12:14:41.973139: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T12:14:42.243170: DEBUG: Routes A received: 3 routes
+2025-10-07T12:14:42.246853: [2025-10-07T12:14:41.972599] Destination A Route 0 (Carr. Transpeninsular/México 1): 36 mins (2149s)
+2025-10-07T12:14:42.247376: [2025-10-07T12:14:41.972599] Destination A Route 1 (Blvd. Fundadores): 39 mins (2327s)
+2025-10-07T12:14:42.247926: [2025-10-07T12:14:41.972599] Destination A Route 2 (Lib. Sur): 43 mins (2552s)
+2025-10-07T12:14:42.247926: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T12:14:42.604306: DEBUG: Routes B received: 3 routes
+2025-10-07T12:14:42.606483: [2025-10-07T12:14:41.972599] Destination B Route 0 (Lib. Sur): 41 mins (2434s)
+2025-10-07T12:14:42.607047: [2025-10-07T12:14:41.972599] Destination B Route 1 (Lib. Sur and Lazaro Cardenas Blvd./Blvd. Lázaro Cárdenas): 41 mins (2456s)
+2025-10-07T12:14:42.607561: [2025-10-07T12:14:41.972599] Destination B Route 2 (Carr. Transpeninsular/México 1): 46 mins (2732s)
+2025-10-07T12:14:42.607561: DEBUG: Logging cycle complete.
+2025-10-07T12:14:42.608116: DEBUG: Manual logging finished.
+2025-10-07T12:14:42.608654: DEBUG: Manual log, no sleep.
+2025-10-07T12:14:42.608654: DEBUG: Checking logging_enabled.txt
+2025-10-07T12:14:42.609198: DEBUG: Logging enabled.
+2025-10-07T12:14:42.609735: DEBUG: Current time: 2025-10-07T12:14:42.609735
+2025-10-07T12:14:42.610278: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T12:14:42.864041: DEBUG: Routes A received: 3 routes
+2025-10-07T12:14:42.866217: [2025-10-07T12:14:42.609735] Destination A Route 0 (Carr. Transpeninsular/México 1): 36 mins (2149s)
+2025-10-07T12:14:42.866750: [2025-10-07T12:14:42.609735] Destination A Route 1 (Blvd. Fundadores): 39 mins (2327s)
+2025-10-07T12:14:42.866750: [2025-10-07T12:14:42.609735] Destination A Route 2 (Lib. Sur): 43 mins (2552s)
+2025-10-07T12:14:42.867292: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T12:14:43.075941: DEBUG: Routes B received: 3 routes
+2025-10-07T12:14:43.078118: [2025-10-07T12:14:42.609735] Destination B Route 0 (Lib. Sur): 41 mins (2434s)
+2025-10-07T12:14:43.078657: [2025-10-07T12:14:42.609735] Destination B Route 1 (Lib. Sur and Lazaro Cardenas Blvd./Blvd. Lázaro Cárdenas): 41 mins (2457s)
+2025-10-07T12:14:43.078657: [2025-10-07T12:14:42.609735] Destination B Route 2 (Carr. Transpeninsular/México 1): 46 mins (2732s)
+2025-10-07T12:14:43.079249: DEBUG: Logging cycle complete.
+2025-10-07T12:14:43.079794: DEBUG: Sleeping for 300 seconds
+2025-10-07T12:19:43.080457: DEBUG: Checking logging_enabled.txt
+2025-10-07T12:19:43.081543: DEBUG: Logging enabled.
+2025-10-07T12:19:43.082093: DEBUG: Current time: 2025-10-07T12:19:43.081543
+2025-10-07T12:19:43.082093: DEBUG: Fetching routes for Destination A: Blvd. Agua Caliente 4558 C-1, Aviacion, 22014 Tijuana, B.C.
+2025-10-07T12:19:43.342918: DEBUG: Routes A received: 3 routes
+2025-10-07T12:19:43.344525: [2025-10-07T12:19:43.081543] Destination A Route 0 (Carr. Transpeninsular/México 1): 35 mins (2078s)
+2025-10-07T12:19:43.345051: [2025-10-07T12:19:43.081543] Destination A Route 1 (Blvd. Fundadores): 39 mins (2312s)
+2025-10-07T12:19:43.345615: [2025-10-07T12:19:43.081543] Destination A Route 2 (Lib. Sur): 43 mins (2578s)
+2025-10-07T12:19:43.345615: DEBUG: Fetching routes for Destination B: Avenida Universidad 13021, Parque Internacional Industrial Tijuana, 22424 Tijuana, B.C.
+2025-10-07T12:19:43.570286: DEBUG: Routes B received: 3 routes
+2025-10-07T12:19:43.571866: [2025-10-07T12:19:43.081543] Destination B Route 0 (Lib. Sur): 41 mins (2461s)
+2025-10-07T12:19:43.572399: [2025-10-07T12:19:43.081543] Destination B Route 1 (Lib. Sur and Lazaro Cardenas Blvd./Blvd. Lázaro Cárdenas): 41 mins (2478s)
+2025-10-07T12:19:43.572940: [2025-10-07T12:19:43.081543] Destination B Route 2 (Carr. Transpeninsular/México 1): 45 mins (2714s)
+2025-10-07T12:19:43.572940: DEBUG: Logging cycle complete.
+2025-10-07T12:19:43.573483: DEBUG: Sleeping for 300 seconds

@@ -1,0 +1,19 @@
+timestamp,weekday,time,duration_sec,duration_text,destination,route,summary
+2025-10-07T12:14:41.972599,Tuesday,12:14,2149,36 mins,A,0,Carr. Transpeninsular/México 1
+2025-10-07T12:14:41.972599,Tuesday,12:14,2327,39 mins,A,1,Blvd. Fundadores
+2025-10-07T12:14:41.972599,Tuesday,12:14,2552,43 mins,A,2,Lib. Sur
+2025-10-07T12:14:41.972599,Tuesday,12:14,2434,41 mins,B,0,Lib. Sur
+2025-10-07T12:14:41.972599,Tuesday,12:14,2456,41 mins,B,1,Lib. Sur and Lazaro Cardenas Blvd./Blvd. Lázaro Cárdenas
+2025-10-07T12:14:41.972599,Tuesday,12:14,2732,46 mins,B,2,Carr. Transpeninsular/México 1
+2025-10-07T12:14:42.609735,Tuesday,12:14,2149,36 mins,A,0,Carr. Transpeninsular/México 1
+2025-10-07T12:14:42.609735,Tuesday,12:14,2327,39 mins,A,1,Blvd. Fundadores
+2025-10-07T12:14:42.609735,Tuesday,12:14,2552,43 mins,A,2,Lib. Sur
+2025-10-07T12:14:42.609735,Tuesday,12:14,2434,41 mins,B,0,Lib. Sur
+2025-10-07T12:14:42.609735,Tuesday,12:14,2457,41 mins,B,1,Lib. Sur and Lazaro Cardenas Blvd./Blvd. Lázaro Cárdenas
+2025-10-07T12:14:42.609735,Tuesday,12:14,2732,46 mins,B,2,Carr. Transpeninsular/México 1
+2025-10-07T12:19:43.081543,Tuesday,12:19,2078,35 mins,A,0,Carr. Transpeninsular/México 1
+2025-10-07T12:19:43.081543,Tuesday,12:19,2312,39 mins,A,1,Blvd. Fundadores
+2025-10-07T12:19:43.081543,Tuesday,12:19,2578,43 mins,A,2,Lib. Sur
+2025-10-07T12:19:43.081543,Tuesday,12:19,2461,41 mins,B,0,Lib. Sur
+2025-10-07T12:19:43.081543,Tuesday,12:19,2478,41 mins,B,1,Lib. Sur and Lazaro Cardenas Blvd./Blvd. Lázaro Cárdenas
+2025-10-07T12:19:43.081543,Tuesday,12:19,2714,45 mins,B,2,Carr. Transpeninsular/México 1

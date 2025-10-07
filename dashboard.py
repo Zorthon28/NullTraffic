@@ -8,6 +8,8 @@ import numpy as np
 import requests
 from datetime import datetime
 import pytz
+import plotly.express as px
+import plotly.graph_objects as go
 
 st.set_page_config(page_title="Traffic Dashboard", page_icon="🚗",
                    layout="wide", initial_sidebar_state="expanded")
@@ -399,35 +401,115 @@ while True:
                         st.info(
                             f"⚠️ Elevated traffic. Latest: {latest_dur} sec")
 
-            # Visualizations
-            st.subheader("Visualizations")
-            viz_col1, viz_col2 = st.columns(2)
-            with viz_col1:
-                st.write("Average Duration by Weekday")
-                if not filtered_df.empty:
-                    weekday_avg = filtered_df.groupby(
-                        'weekday')['duration_sec'].mean()
-                    st.bar_chart(weekday_avg)
-            with viz_col2:
-                st.write("Average Duration by Hour")
-                if not filtered_df.empty:
-                    hour_avg = filtered_df.groupby(
-                        'hour')['duration_sec'].mean()
-                    st.bar_chart(hour_avg)
+            # Enhanced Visualizations with Plotly
+            st.subheader("📊 Enhanced Traffic Visualizations")
 
-            # Heatmap
-            st.subheader("Traffic Heatmap (Hour vs Weekday)")
             if not filtered_df.empty:
+                # Convert duration to minutes for better readability
+                filtered_df['duration_min'] = filtered_df['duration_sec'] / 60
+
+                # 1. Interactive Bar Chart: Average Duration by Weekday
+                st.subheader("📅 Average Travel Time by Weekday")
+                weekday_avg = filtered_df.groupby(
+                    'weekday')['duration_min'].mean().reset_index()
+                weekday_avg['weekday'] = pd.Categorical(weekday_avg['weekday'],
+                                                        categories=[
+                                                            'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                                                        ordered=True)
+                weekday_avg = weekday_avg.sort_values('weekday')
+
+                fig_weekday = px.bar(weekday_avg, x='weekday', y='duration_min',
+                                     title='Average Travel Time by Day of Week',
+                                     labels={
+                                         'duration_min': 'Duration (minutes)', 'weekday': 'Day'},
+                                     color='duration_min',
+                                     color_continuous_scale='RdYlGn_r')
+                fig_weekday.update_layout(showlegend=False)
+                st.plotly_chart(fig_weekday, use_container_width=True)
+
+                # 2. Interactive Line Chart: Average Duration by Hour
+                st.subheader("🕐 Average Travel Time by Hour")
+                hour_avg = filtered_df.groupby(
+                    'hour')['duration_min'].mean().reset_index()
+
+                fig_hour = px.line(hour_avg, x='hour', y='duration_min',
+                                   title='Average Travel Time Throughout the Day',
+                                   labels={
+                                       'duration_min': 'Duration (minutes)', 'hour': 'Hour of Day'},
+                                   markers=True, line_shape='spline')
+                fig_hour.update_xaxes(tickmode='linear', tick0=0, dtick=1)
+                fig_hour.update_traces(
+                    mode='lines+markers', hovertemplate='Hour: %{x}<br>Duration: %{y:.1f} min')
+                st.plotly_chart(fig_hour, use_container_width=True)
+
+                # 3. Interactive Heatmap: Hour vs Weekday
+                st.subheader("🔥 Traffic Intensity Heatmap")
                 pivot = filtered_df.pivot_table(
-                    values='duration_sec', index='weekday', columns='hour', aggfunc='mean')
-                fig, ax = plt.subplots(figsize=(10, 6))
-                cax = ax.imshow(pivot, cmap='RdYlGn_r', aspect='auto')
-                ax.set_xticks(range(len(pivot.columns)))
-                ax.set_xticklabels(pivot.columns)
-                ax.set_yticks(range(len(pivot.index)))
-                ax.set_yticklabels(pivot.index)
-                plt.colorbar(cax, ax=ax, label='Duration (seconds)')
-                st.pyplot(fig)
+                    values='duration_min', index='weekday', columns='hour', aggfunc='mean')
+                # Reorder weekdays
+                weekday_order = ['Monday', 'Tuesday', 'Wednesday',
+                                 'Thursday', 'Friday', 'Saturday', 'Sunday']
+                pivot = pivot.reindex(weekday_order)
+
+                fig_heatmap = go.Figure(data=go.Heatmap(
+                    z=pivot.values,
+                    x=pivot.columns,
+                    y=pivot.index,
+                    colorscale='RdYlGn_r',
+                    hoverongaps=False,
+                    hovertemplate='Day: %{y}<br>Hour: %{x}<br>Duration: %{z:.1f} min<extra></extra>'
+                ))
+                fig_heatmap.update_layout(
+                    title='Traffic Duration Heatmap (Hour vs Weekday)',
+                    xaxis_title='Hour of Day',
+                    yaxis_title='Day of Week'
+                )
+                st.plotly_chart(fig_heatmap, use_container_width=True)
+
+                # 4. New: Duration Distribution Histogram
+                st.subheader("📈 Travel Time Distribution")
+                fig_hist = px.histogram(filtered_df, x='duration_min',
+                                        title='Distribution of Travel Times',
+                                        labels={
+                                            'duration_min': 'Duration (minutes)', 'count': 'Frequency'},
+                                        nbins=30,
+                                        color_discrete_sequence=['#636EFA'])
+                fig_hist.update_layout(showlegend=False)
+                st.plotly_chart(fig_hist, use_container_width=True)
+
+                # 5. New: Route Performance Comparison
+                if 'route' in filtered_df.columns:
+                    st.subheader("🛣️ Route Performance Comparison")
+                    route_avg = filtered_df.groupby(['destination', 'route'])[
+                        'duration_min'].mean().reset_index()
+                    route_avg['route_label'] = route_avg['destination'] + \
+                        '-' + route_avg['route'].astype(str)
+
+                    fig_routes = px.bar(route_avg, x='route_label', y='duration_min',
+                                        title='Average Travel Time by Route',
+                                        labels={
+                                            'duration_min': 'Duration (minutes)', 'route_label': 'Route'},
+                                        color='destination',
+                                        color_discrete_map={'A': '#FF6B6B', 'B': '#4ECDC4', 'C': '#45B7D1', 'D': '#96CEB4'})
+                    fig_routes.update_layout(xaxis_tickangle=-45)
+                    st.plotly_chart(fig_routes, use_container_width=True)
+
+                # 6. Enhanced Time Series with Trend
+                st.subheader("📈 Travel Time Trends Over Time")
+                # Sort by timestamp
+                time_df = filtered_df.sort_values('timestamp')
+
+                fig_trend = px.scatter(time_df, x='timestamp', y='duration_min',
+                                       title='Travel Time Trends with Moving Average',
+                                       labels={
+                                           'duration_min': 'Duration (minutes)', 'timestamp': 'Time'},
+                                       trendline='rolling', trendline_options=dict(window=10),
+                                       color='destination',
+                                       color_discrete_map={'A': '#FF6B6B', 'B': '#4ECDC4', 'C': '#45B7D1', 'D': '#96CEB4'})
+                st.plotly_chart(fig_trend, use_container_width=True)
+
+            else:
+                st.write("No data available for visualizations.")
 
             # Route Comparison
             st.subheader("Route Comparison")

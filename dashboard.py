@@ -425,7 +425,8 @@ while True:
                                      color='duration_min',
                                      color_continuous_scale='RdYlGn_r')
                 fig_weekday.update_layout(showlegend=False)
-                st.plotly_chart(fig_weekday, use_container_width=True)
+                st.plotly_chart(
+                    fig_weekday, use_container_width=True, key='weekday_chart')
 
                 # 2. Interactive Line Chart: Average Duration by Hour
                 st.subheader("🕐 Average Travel Time by Hour")
@@ -440,7 +441,8 @@ while True:
                 fig_hour.update_xaxes(tickmode='linear', tick0=0, dtick=1)
                 fig_hour.update_traces(
                     mode='lines+markers', hovertemplate='Hour: %{x}<br>Duration: %{y:.1f} min')
-                st.plotly_chart(fig_hour, use_container_width=True)
+                st.plotly_chart(
+                    fig_hour, use_container_width=True, key='hour_chart')
 
                 # 3. Interactive Heatmap: Hour vs Weekday
                 st.subheader("🔥 Traffic Intensity Heatmap")
@@ -464,7 +466,8 @@ while True:
                     xaxis_title='Hour of Day',
                     yaxis_title='Day of Week'
                 )
-                st.plotly_chart(fig_heatmap, use_container_width=True)
+                st.plotly_chart(
+                    fig_heatmap, use_container_width=True, key='heatmap_chart')
 
                 # 4. New: Duration Distribution Histogram
                 st.subheader("📈 Travel Time Distribution")
@@ -475,7 +478,8 @@ while True:
                                         nbins=30,
                                         color_discrete_sequence=['#636EFA'])
                 fig_hist.update_layout(showlegend=False)
-                st.plotly_chart(fig_hist, use_container_width=True)
+                st.plotly_chart(
+                    fig_hist, use_container_width=True, key='hist_chart')
 
                 # 5. New: Route Performance Comparison
                 if 'route' in filtered_df.columns:
@@ -492,7 +496,8 @@ while True:
                                         color='destination',
                                         color_discrete_map={'A': '#FF6B6B', 'B': '#4ECDC4', 'C': '#45B7D1', 'D': '#96CEB4'})
                     fig_routes.update_layout(xaxis_tickangle=-45)
-                    st.plotly_chart(fig_routes, use_container_width=True)
+                    st.plotly_chart(
+                        fig_routes, use_container_width=True, key='routes_chart')
 
                 # 6. Enhanced Time Series with Trend
                 st.subheader("📈 Travel Time Trends Over Time")
@@ -500,17 +505,17 @@ while True:
                 time_df = filtered_df.sort_values('timestamp')
 
                 fig_trend = px.scatter(time_df, x='timestamp', y='duration_min',
-                                       title='Travel Time Trends with Moving Average',
-                                       labels={
-                                           'duration_min': 'Duration (minutes)', 'timestamp': 'Time'},
-                                       trendline='rolling', trendline_options=dict(window=10),
-                                       color='destination',
-                                       color_discrete_map={'A': '#FF6B6B', 'B': '#4ECDC4', 'C': '#45B7D1', 'D': '#96CEB4'})
-                st.plotly_chart(fig_trend, use_container_width=True)
+                                      title='Travel Time Trends with Moving Average',
+                                      labels={
+                                          'duration_min': 'Duration (minutes)', 'timestamp': 'Time'},
+                                      trendline='rolling', trendline_options=dict(window=10),
+                                      color='destination',
+                                      color_discrete_map={'A': '#FF6B6B', 'B': '#4ECDC4', 'C': '#45B7D1', 'D': '#96CEB4'})
+               st.plotly_chart(fig_trend, use_container_width=True, key='trend_chart')
 
-            else:
-                st.write("No data available for visualizations.")
+           else:
 
+               st.write("No data available for visualizations.")
             # Route Comparison
             st.subheader("Route Comparison")
             if not filtered_df.empty and 'route' in df.columns:

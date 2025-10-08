@@ -505,12 +505,12 @@ while True:
                 time_df = filtered_df.sort_values('timestamp')
 
                 fig_trend = px.scatter(time_df, x='timestamp', y='duration_min',
-                                      title='Travel Time Trends with Moving Average',
-                                      labels={
-                                          'duration_min': 'Duration (minutes)', 'timestamp': 'Time'},
-                                      trendline='rolling', trendline_options=dict(window=10),
-                                      color='destination',
-                                      color_discrete_map={'A': '#FF6B6B', 'B': '#4ECDC4', 'C': '#45B7D1', 'D': '#96CEB4'})
+                                       title='Travel Time Trends with Moving Average',
+                                       labels={
+                                           'duration_min': 'Duration (minutes)', 'timestamp': 'Time'},
+                                       trendline='rolling', trendline_options=dict(window=10),
+                                       color='destination',
+                                       color_discrete_map={'A': '#FF6B6B', 'B': '#4ECDC4', 'C': '#45B7D1', 'D': '#96CEB4'})
                st.plotly_chart(fig_trend, use_container_width=True, key='trend_chart')
 
            else:

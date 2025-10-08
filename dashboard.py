@@ -511,56 +511,56 @@ while True:
                                        trendline='rolling', trendline_options=dict(window=10),
                                        color='destination',
                                        color_discrete_map={'A': '#FF6B6B', 'B': '#4ECDC4', 'C': '#45B7D1', 'D': '#96CEB4'})
-               st.plotly_chart(fig_trend, use_container_width=True, key='trend_chart')
+                st.plotly_chart(
+                    fig_trend, use_container_width=True, key='trend_chart')
 
-           else:
+            else:
+                st.write("No data available for visualizations.")
+                # Route Comparison
+                st.subheader("Route Comparison")
+                if not filtered_df.empty and 'route' in df.columns:
+                    route_avg = filtered_df.groupby(
+                        'route')['duration_sec'].mean().sort_values()
+                    st.bar_chart(route_avg)
+                    best_route = route_avg.idxmin()
+                    st.write(
+                        f"Recommended Route: {best_route} (average {route_avg.min()/60:.1f} min)")
 
-               st.write("No data available for visualizations.")
-            # Route Comparison
-            st.subheader("Route Comparison")
-            if not filtered_df.empty and 'route' in df.columns:
-                route_avg = filtered_df.groupby(
-                    'route')['duration_sec'].mean().sort_values()
-                st.bar_chart(route_avg)
-                best_route = route_avg.idxmin()
-                st.write(
-                    f"Recommended Route: {best_route} (average {route_avg.min()/60:.1f} min)")
-
-                # Route details
-                with st.expander("View Route Details and Maps"):
-                    for dest in ['A', 'B', 'C', 'D']:
-                        if dest in filtered_df['destination'].values:
-                            st.write(f"**Destination {dest}**")
-                            dest_data = filtered_df[filtered_df['destination'] == dest]
-                            for route_id in sorted(dest_data['route'].unique()):
-                                route_data = dest_data[dest_data['route']
-                                                       == route_id]
-                                avg_dur = route_data['duration_sec'].mean()
-                                summary = route_data['summary'].iloc[0] if 'summary' in route_data.columns and not route_data[
-                                    'summary'].empty else f"Route {route_id}"
-                                st.write(
-                                    f"  Route {route_id} ({summary}): Average {avg_dur/60:.1f} min")
-                                # Link to Google Maps
-                                if dest == 'A':
-                                    origin_enc = config['origin'].replace(
-                                        ' ', '+')
-                                    dest_name = config['destination_a']
-                                elif dest == 'B':
-                                    origin_enc = config['origin'].replace(
-                                        ' ', '+')
-                                    dest_name = config['destination_b']
-                                elif dest == 'C':
-                                    origin_enc = config['destination_a'].replace(
-                                        ' ', '+')
-                                    dest_name = config['destination_c']
-                                elif dest == 'D':
-                                    origin_enc = config['destination_b'].replace(
-                                        ' ', '+')
-                                    dest_name = config['destination_d']
-                                dest_enc = dest_name.replace(' ', '+')
-                                url = f"https://www.google.com/maps/dir/{origin_enc}/{dest_enc}/?dirflg=h"
-                                st.markdown(
-                                    f"  [View Route Options on Google Maps]({url})")
+                    # Route details
+                    with st.expander("View Route Details and Maps"):
+                        for dest in ['A', 'B', 'C', 'D']:
+                            if dest in filtered_df['destination'].values:
+                                st.write(f"**Destination {dest}**")
+                                dest_data = filtered_df[filtered_df['destination'] == dest]
+                                for route_id in sorted(dest_data['route'].unique()):
+                                    route_data = dest_data[dest_data['route']
+                                                           == route_id]
+                                    avg_dur = route_data['duration_sec'].mean()
+                                    summary = route_data['summary'].iloc[0] if 'summary' in route_data.columns and not route_data[
+                                        'summary'].empty else f"Route {route_id}"
+                                    st.write(
+                                        f"  Route {route_id} ({summary}): Average {avg_dur/60:.1f} min")
+                                    # Link to Google Maps
+                                    if dest == 'A':
+                                        origin_enc = config['origin'].replace(
+                                            ' ', '+')
+                                        dest_name = config['destination_a']
+                                    elif dest == 'B':
+                                        origin_enc = config['origin'].replace(
+                                            ' ', '+')
+                                        dest_name = config['destination_b']
+                                    elif dest == 'C':
+                                        origin_enc = config['destination_a'].replace(
+                                            ' ', '+')
+                                        dest_name = config['destination_c']
+                                    elif dest == 'D':
+                                        origin_enc = config['destination_b'].replace(
+                                            ' ', '+')
+                                        dest_name = config['destination_d']
+                                    dest_enc = dest_name.replace(' ', '+')
+                                    url = f"https://www.google.com/maps/dir/{origin_enc}/{dest_enc}/?dirflg=h"
+                                    st.markdown(
+                                        f"  [View Route Options on Google Maps]({url})")
 
             # Time series
             st.subheader("Duration Over Time")
